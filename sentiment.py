@@ -217,9 +217,7 @@ except Exception as e:
 earlystopping = EarlyStopping(monitor='val_loss', patience=3, verbose=1)
 
 # 自动降低learning rate
-lr_reduction = ReduceLROnPlateau(monitor='val_loss',
-                                       factor=0.1, min_lr=1e-5, patience=0,
-                                       verbose=1)
+lr_reduction = ReduceLROnPlateau(monitor='val_loss', factor=0.1, min_lr=1e-5, patience=0, verbose=1)
 
 # 定义callback函数
 callbacks = [
@@ -229,6 +227,7 @@ callbacks = [
 ]
 
 # 开始训练
+print('开始训练...')
 # model.fit(X_train, y_train,
 #           validation_split=0.1,
 #           epochs=20,
