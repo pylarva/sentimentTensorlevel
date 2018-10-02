@@ -210,6 +210,7 @@ try:
     model.load_weights(path_checkpoint)
     graph = tf.get_default_graph()
 except Exception as e:
+    graph = tf.get_default_graph()
     print(e)
 
 # 定义early stoping如果3个epoch内validation loss没有改善则停止训练
